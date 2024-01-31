@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 // cek apakah yang mengakses halaman ini sudah login
 if ($_SESSION['id_level'] == "") {
   header("location:../login.php?info=login");
@@ -21,42 +20,45 @@ if ($_SESSION['id_level'] == "") {
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body ">
+                <div class="offcanvas-body">
                     <ul class="navbar-nav nav justify-content-end flex-grow-1  flex-column nav-pills">
                         <?php if ($_SESSION['id_level'] == "1") { ?>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2 " aria-current="page" href="index.php"><i class="fas fa-home"></i>
-                                Beranda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" aria-current="page" href="barang.php"><i
-                                    class="fas fa-window-restore"></i> Pendataan Barang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" aria-current="page" href="petugas.php"><i class="fas fa-users"></i>
-                                </i>Data Petugas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" aria-current="page" href="laporan.php"><i class="fas fa-flag"></i>
-                                Laporan</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link ps-2 <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active text-white ' : ''; ?>"
+                                    aria-current="page" href="index.php"><i class="fas fa-home"></i> Beranda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ps-2 <?php echo basename($_SERVER['PHP_SELF']) == 'barang.php' ? 'active text-white' : ''; ?>"
+                                    aria-current="page" href="barang.php"><i class="fas fa-window-restore"></i> Pendataan
+                                    Barang</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ps-2 <?php echo basename($_SERVER['PHP_SELF']) == 'petugas.php' ? 'active text-white' : ''; ?>"
+                                    aria-current="page" href="petugas.php"><i class="fas fa-users"></i> Data Petugas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ps-2 <?php echo basename($_SERVER['PHP_SELF']) == 'laporan.php' ? 'active text-white' : ''; ?>"
+                                    aria-current="page" href="laporan.php"><i class="fas fa-flag"></i> Laporan</a>
+                            </li>
                         <?php } else { ?>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2 " aria-current="page" href="index.php"><i class="fas fa-home"></i>
-                                Beranda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" aria-current="page" href="barang.php"><i
-                                    class="fas fa-window-restore"></i> Pendataan Barang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" aria-current="page" href="aktivasi.php"><i
-                                    class="fas fa-chart-line"></i> Aktivitas Lelang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" aria-current="page" href="laporan.php"><i class="fas fa-flag"></i>
-                                Laporan</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link ps-2 <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active text-white' : ''; ?>"
+                                    aria-current="page" href="index.php"><i class="fas fa-home"></i> Beranda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ps-2 <?php echo basename($_SERVER['PHP_SELF']) == 'barang.php' ? 'active text-white' : ''; ?>"
+                                    aria-current="page" href="barang.php"><i class="fas fa-window-restore"></i> Pendataan
+                                    Barang</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ps-2 <?php echo basename($_SERVER['PHP_SELF']) == 'aktivasi.php' ? 'active text-white' : ''; ?>"
+                                    aria-current="page" href="aktivasi.php"><i class="fas fa-chart-line"></i> Aktivitas
+                                    Lelang</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ps-2 <?php echo basename($_SERVER['PHP_SELF']) == 'laporan.php' ? 'active text-white' : ''; ?>"
+                                    aria-current="page" href="laporan.php"><i class="fas fa-flag"></i> Laporan</a>
+                            </li>
                         <?php } ?>
                     </ul>
                 </div>
