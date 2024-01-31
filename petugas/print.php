@@ -1,6 +1,4 @@
-<?php
-include '../layouts/header.php';
-?>
+
 
 <!-- /.navbar -->
 
@@ -9,6 +7,12 @@ include '../layouts/header.php';
 <!-- Content Header (Page header) -->
 <!-- /.content-header -->
 
+<head>
+  <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
 <!-- Main content -->
 <div class="content">
   <div class="container">
@@ -25,23 +29,23 @@ include '../layouts/header.php';
             <?php
             if (isset($_GET['info'])) {
               if ($_GET['info'] == "hapus") { ?>
-                <div class="alert alert-success alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                  <h5><i class="icon fas fa-trash"></i> Sukses</h5>
-                  Data berhasil di hapus
-                </div>
-              <?php } else if ($_GET['info'] == "simpan") { ?>
-                <div class="alert alert-success alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                  <h5><i class="icon fas fa-check"></i> Sukses</h5>
-                  Data berhasil di simpan
-                </div>
-              <?php } else if ($_GET['info'] == "update") { ?>
-                <div class="alert alert-success alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                  <h5><i class="icon fas fa-edit"></i> Sukses</h5>
-                  Data berhasil di update
-                </div>
+            <div class="alert alert-success alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h5><i class="icon fas fa-trash"></i> Sukses</h5>
+              Data berhasil di hapus
+            </div>
+            <?php } else if ($_GET['info'] == "simpan") { ?>
+            <div class="alert alert-success alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h5><i class="icon fas fa-check"></i> Sukses</h5>
+              Data berhasil di simpan
+            </div>
+            <?php } else if ($_GET['info'] == "update") { ?>
+            <div class="alert alert-success alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h5><i class="icon fas fa-edit"></i> Sukses</h5>
+              Data berhasil di update
+            </div>
             <?php }
             } ?>
             <table class="table table-bordered">
@@ -73,85 +77,87 @@ include '../layouts/header.php';
                     $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
                   }
                 ?>
-                  <?php
+                <?php
                   if ($d_tb_lelang['status'] == 'dibuka') { ?>
-                  <?php } else { ?>
-                    <tr>
-                      <td><?php echo $no++; ?></td>
-                      <td><?= $d_tb_lelang['nama_barang'] ?></td>
-                      <td><?= $d_tb_lelang['tgl_lelang'] ?></td>
-                      <td><?php if ($d_harga_tertinggi == 0 || $d_harga_tertinggi == null) { ?>
-                          Belum ada Pemenang
-                        <?php } else { ?>
-                          <?= $d_tb_masyarakat['nama_lengkap'] ?? null ?>
-                        <?php } ?></td>
-                      <td>Rp. <?= number_format($d_harga_tertinggi) ?></td>
-                      <td>
-                        <?php if ($d_tb_lelang['status'] == '') { ?>
-                          <div class="btn btn-warning btn-sm">Lelang Belum Aktif</div>
-                        <?php } else if ($d_tb_lelang['status'] == 'dibuka') { ?>
-                          <div class="btn btn-success btn-sm">Lelang Dibuka</div>
-                        <?php } else { ?>
-                          <div class="btn btn-success btn-sm">Lelang Selesai</div>
-                        <?php } ?>
-                      </td>
-                    </tr>
-                  <?php } ?>
-                  <div class="modal fade" id="modal-buka<?php echo $d_tb_lelang['id_lelang']; ?>">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h4 class="modal-title">Aktivasi Buka Lelang</h4>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <form method="post" action="update_lelang_buka.php">
-                          <div class="modal-body">
-                            <p>Apakah anda ingin membuka lelang...?</p>
-                            <div class="form-group">
-                              <input type="text" class="form-control" value="dibuka" name="status" hidden="">
-                              <input type="text" class="form-control" value="<?php echo $d_tb_lelang['id_lelang']; ?>" name="id_lelang" hidden="">
-                            </div>
-                          </div>
-                          <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                          </div>
-                        </form>
+                <?php } else { ?>
+                <tr>
+                  <td><?php echo $no++; ?></td>
+                  <td><?= $d_tb_lelang['nama_barang'] ?></td>
+                  <td><?= $d_tb_lelang['tgl_lelang'] ?></td>
+                  <td><?php if ($d_harga_tertinggi == 0 || $d_harga_tertinggi == null) { ?>
+                    Belum ada Pemenang
+                    <?php } else { ?>
+                    <?= $d_tb_masyarakat['nama_lengkap'] ?? null ?>
+                    <?php } ?></td>
+                  <td>Rp. <?= number_format($d_harga_tertinggi) ?></td>
+                  <td>
+                    <?php if ($d_tb_lelang['status'] == '') { ?>
+                    <div class="btn btn-warning btn-sm">Lelang Belum Aktif</div>
+                    <?php } else if ($d_tb_lelang['status'] == 'dibuka') { ?>
+                    <div class="btn btn-success btn-sm">Lelang Dibuka</div>
+                    <?php } else { ?>
+                    <div class="btn btn-success btn-sm">Lelang Selesai</div>
+                    <?php } ?>
+                  </td>
+                </tr>
+                <?php } ?>
+                <div class="modal fade" id="modal-buka<?php echo $d_tb_lelang['id_lelang']; ?>">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Aktivasi Buka Lelang</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
                       </div>
-                      <!-- /.modal-content -->
+                      <form method="post" action="update_lelang_buka.php">
+                        <div class="modal-body">
+                          <p>Apakah anda ingin membuka lelang...?</p>
+                          <div class="form-group">
+                            <input type="text" class="form-control" value="dibuka" name="status" hidden="">
+                            <input type="text" class="form-control" value="<?php echo $d_tb_lelang['id_lelang']; ?>"
+                              name="id_lelang" hidden="">
+                          </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
+                      </form>
                     </div>
-                    <!-- /.modal-dialog -->
+                    <!-- /.modal-content -->
                   </div>
+                  <!-- /.modal-dialog -->
+                </div>
 
-                  <div class="modal fade" id="modal-tutup<?php echo $d_tb_lelang['id_lelang']; ?>">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h4 class="modal-title">Aktivasi Tutup Lelang</h4>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <form method="post" action="update_lelang_tutup.php">
-                          <div class="modal-body">
-                            <p>Apakah Anda ingin menutup lelang...?</p>
-                            <div class="form-group">
-                              <input type="text" class="form-control" value="ditutup" name="status" hidden="">
-                              <input type="text" class="form-control" value="<?php echo $d_tb_lelang['id_lelang']; ?>" name="id_lelang" hidden="">
-                            </div>
-                          </div>
-                          <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                          </div>
-                        </form>
+                <div class="modal fade" id="modal-tutup<?php echo $d_tb_lelang['id_lelang']; ?>">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Aktivasi Tutup Lelang</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
                       </div>
-                      <!-- /.modal-content -->
+                      <form method="post" action="update_lelang_tutup.php">
+                        <div class="modal-body">
+                          <p>Apakah Anda ingin menutup lelang...?</p>
+                          <div class="form-group">
+                            <input type="text" class="form-control" value="ditutup" name="status" hidden="">
+                            <input type="text" class="form-control" value="<?php echo $d_tb_lelang['id_lelang']; ?>"
+                              name="id_lelang" hidden="">
+                          </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
+                      </form>
                     </div>
-                    <!-- /.modal-dialog -->
+                    <!-- /.modal-content -->
                   </div>
+                  <!-- /.modal-dialog -->
+                </div>
 
                 <?php } ?>
               </tbody>
@@ -176,7 +182,8 @@ include '../layouts/header.php';
                           $tb_barang    = mysqli_query($koneksi, "SELECT * FROM tb_barang");
                           while ($d_tb_barang = mysqli_fetch_array($tb_barang)) {
                           ?>
-                            <option value="<?php echo $d_tb_barang['id_barang']; ?>"><?php echo $d_tb_barang['nama_barang']; ?></option>
+                          <option value="<?php echo $d_tb_barang['id_barang']; ?>">
+                            <?php echo $d_tb_barang['nama_barang']; ?></option>
                           <?php } ?>
                         </select>
                       </div>
@@ -186,7 +193,8 @@ include '../layouts/header.php';
                         $tb_petugas    = mysqli_query($koneksi, "SELECT * FROM tb_petugas where username='$_SESSION[username]'");
                         while ($d_tb_petugas = mysqli_fetch_array($tb_petugas)) {
                         ?>
-                          <input type="text" class="form-control" value="<?php echo $d_tb_petugas['id_petugas']; ?>" name="id_petugas" hidden>
+                        <input type="text" class="form-control" value="<?php echo $d_tb_petugas['id_petugas']; ?>"
+                          name="id_petugas" hidden>
                         <?php } ?>
                       </div>
                     </div>

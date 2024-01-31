@@ -18,8 +18,8 @@ include '../layouts/header.php';
 
                 <div class="table-responsive">
                     <?php
-              if (isset($_GET['info'])) {
-                if ($_GET['info'] == "hapus") { ?>
+                    if (isset($_GET['info'])) {
+                     if ($_GET['info'] == "hapus") { ?>
                     <div class="alert alert-success alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h5><i class="icon fas fa-trash"></i> Sukses</h5>

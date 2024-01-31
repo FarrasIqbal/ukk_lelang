@@ -18,7 +18,7 @@
 
 </head>
 
-<nav class="navbar navbar-expand navbar bg-primary" data-bs-theme="dark">
+<nav class="navbar navbar-expand navbar bg-primary sticky-top" data-bs-theme="dark">
     <div class="container">
         <a class="navbar-brand" href="."><i class="bi bi-cup-hot-fill me-2"></i>E-Lelang</a>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">

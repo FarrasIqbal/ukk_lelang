@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 // cek apakah yang mengakses halaman ini sudah login
 if ($_SESSION['id_level'] == "") {
   header("location:../login.php?info=login");
@@ -22,39 +23,39 @@ if ($_SESSION['id_level'] == "") {
                 </div>
                 <div class="offcanvas-body ">
                     <ul class="navbar-nav nav justify-content-end flex-grow-1  flex-column nav-pills">
-                    <?php if ($_SESSION['id_level'] == "1") { ?>
+                        <?php if ($_SESSION['id_level'] == "1") { ?>
                         <li class="nav-item">
-                            <a class="nav-link ps-2 " aria-current="page" href="index.php"><i
-                                    class="bi bi-house-door-fill me-2"></i>Beranda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" aria-current="page" href="menu"><i
-                                    class="bi bi-basket-fill me-2"></i>Pendataan Barang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" aria-current="page" href="order"><i
-                                    class="bi bi-basket-fill me-2"></i>Data Petugas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" aria-current="page" href="customer"><i
-                                    class="bi bi-person-video2 me-2"></i>Laporan</a>
-                        </li>
-                        <?php } else { ?>
-                            <li class="nav-item">
-                            <a class="nav-link ps-2 " aria-current="page" href="index.php"><i
-                                    class="bi bi-house-door-fill me-2"></i>Beranda</a>
+                            <a class="nav-link ps-2 " aria-current="page" href="index.php"><i class="fas fa-home"></i>
+                                Beranda</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ps-2" aria-current="page" href="barang.php"><i
-                                    class="bi bi-basket-fill me-2"></i>Pendataan Barang</a>
+                                    class="fas fa-window-restore"></i> Pendataan Barang</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-2" aria-current="page" href="petugas.php"><i class="fas fa-users"></i>
+                                </i>Data Petugas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-2" aria-current="page" href="laporan.php"><i class="fas fa-flag"></i>
+                                Laporan</a>
+                        </li>
+                        <?php } else { ?>
+                        <li class="nav-item">
+                            <a class="nav-link ps-2 " aria-current="page" href="index.php"><i class="fas fa-home"></i>
+                                Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-2" aria-current="page" href="barang.php"><i
+                                    class="fas fa-window-restore"></i> Pendataan Barang</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ps-2" aria-current="page" href="aktivasi.php"><i
-                                    class="bi bi-basket-fill me-2"></i>Aktivitas Lelang</a>
+                                    class="fas fa-chart-line"></i> Aktivitas Lelang</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ps-2" aria-current="page" href="laporan.php"><i
-                                    class="bi bi-person-video2 me-2"></i>Laporan</a>
+                            <a class="nav-link ps-2" aria-current="page" href="laporan.php"><i class="fas fa-flag"></i>
+                                Laporan</a>
                         </li>
                         <?php } ?>
                     </ul>
