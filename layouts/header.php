@@ -20,7 +20,7 @@
 
 <nav class="navbar navbar-expand navbar bg-primary sticky-top" data-bs-theme="dark">
     <div class="container">
-        <a class="navbar-brand" href="."><i class="bi bi-cup-hot-fill me-2"></i>E-Lelang</a>
+        <a class="navbar-brand" href="."><i class="fas fa-balance-scale"></i> E-Lelang</a>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
                 <li class="nav-item">
