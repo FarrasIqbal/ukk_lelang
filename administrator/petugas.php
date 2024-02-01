@@ -15,26 +15,20 @@ include '../layouts/header.php';
                     </button>
                 </div>
                 <div class="table-responsive">
-                    <?php
-              if (isset($_GET['info'])) {
-                if ($_GET['info'] == "hapus") { ?>
-                    <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fas fa-trash"></i> Sukses</h5>
-                        Data berhasil di hapus
-                    </div>
+                <?php
+                    if (isset($_GET['info'])) {
+                        if ($_GET['info'] == "hapus") { ?>
+                    <script>
+                        swal("Petugas Berhasil DiHapus", "", "success");
+                    </script>
                     <?php } else if ($_GET['info'] == "simpan") { ?>
-                    <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fas fa-check"></i> Sukses</h5>
-                        Data berhasil di simpan
-                    </div>
+                    <script>
+                        swal("Petugas Berhasil Ditambahkan", "", "success");
+                    </script>
                     <?php } else if ($_GET['info'] == "update") { ?>
-                    <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fas fa-edit"></i> Sukses</h5>
-                        Data berhasil di update
-                    </div>
+                    <script>
+                        swal("Petugas Berhasil Di Updated", "", "success");
+                    </script>
                     <?php }
               } ?>
                     <table class="table table-hover">

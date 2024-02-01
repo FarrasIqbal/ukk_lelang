@@ -11,6 +11,6 @@ $harga_akhir = $_POST['harga_akhir'];
 mysqli_query($koneksi,"update tb_lelang set status='$status', id_user='$id_user', harga_akhir='$harga_akhir' where id_lelang='$id_lelang'");
 
 // mengalihkan halaman kembali ke index.php
-header("location:aktivasi.php?info=update");
+header("location:aktivasi.php?info=updatetutup");
 
 ?>

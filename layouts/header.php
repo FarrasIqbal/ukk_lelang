@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../assets/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 

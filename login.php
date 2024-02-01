@@ -7,14 +7,16 @@
   <title>E-Lelang | Develop by Farras</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
-  
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 
 <body class="hold-transition login-page">
@@ -30,23 +32,21 @@
         <?php
         if (isset($_GET['info'])) {
           if ($_GET['info'] == "gagal") { ?>
-            <div class="alert alert-warning alert-dismissible">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h5><i class="icon fas fa-exclamation-triangle"></i> Mohon Maaf</h5>
-              Login gagal! username dan password salah!
-            </div>
-          <?php } else if ($_GET['info'] == "logout") { ?>
-            <div class="alert alert-success alert-dismissible">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h5><i class="icon fas fa-check"></i> Terima Kasih</h5>
-              Anda telah berhasil logout
-            </div>
-          <?php } else if ($_GET['info'] == "login") { ?>
-            <div class="alert alert-info alert-dismissible">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h5><i class="icon fas fa-info"></i> Mohon Maaf</h5>
-              Anda harus login terlebih dahulu
-            </div>
+        <script>
+          swal("Username atau Password salah", "Login tidak valid!", "error");
+        </script>
+        <?php } else if ($_GET['info'] == "logout") { ?>
+        <div class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h5><i class="icon fas fa-check"></i> Terima Kasih</h5>
+          Anda telah berhasil logout
+        </div>
+        <?php } else if ($_GET['info'] == "login") { ?>
+        <div class="alert alert-info alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h5><i class="icon fas fa-info"></i> Mohon Maaf</h5>
+          Anda harus login terlebih dahulu
+        </div>
         <?php }
         } ?>
 
