@@ -165,7 +165,7 @@ include '../layouts/header.php';
           </div>
           <div class="card-body">
             <div class="card-body">
-              <table class="table table-hover">
+              <table class="table table-bordered">
                 <thead>
                   <tr>
                     <th>#</th>
