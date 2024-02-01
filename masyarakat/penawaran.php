@@ -52,11 +52,11 @@ include '../layouts/header.php';
                       <td>Rp. <?= number_format($d_history_lelang['penawaran_harga']) ?></td>
                       <td>
                         <?php if ($d_history_lelang['penawaran_harga'] == $d_history_lelang['harga_akhir']) { ?>
-                        <div class="btn btn-success">Selamat Anda Memenangkan Lelang</div>
+                        <div class="btn btn-success btn-block">Selamat Anda Memenangkan Lelang</div>
                         <?php } elseif ($d_history_lelang['penawaran_harga'] != $d_history_lelang['harga_akhir']) { ?>
-                        <div class="btn btn-warning">Belum Ada Pemenang</div>
+                        <div class="btn btn-warning btn-block">Belum Ada Pemenang</div>
                         <?php } else  { ?>
-                        <div class="btn btn-danger">Maaf Anda Kurang Beruntung</div>
+                        <div class="btn btn-danger btn-block">Maaf Anda Kurang Beruntung</div>
                         <?php } ?>
 
                       </td>
