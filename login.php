@@ -16,6 +16,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
 
 </head>
 

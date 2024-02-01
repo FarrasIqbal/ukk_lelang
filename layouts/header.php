@@ -12,7 +12,7 @@
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
 
 
 

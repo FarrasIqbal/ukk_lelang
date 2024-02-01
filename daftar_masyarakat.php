@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
 
 </head>
 
