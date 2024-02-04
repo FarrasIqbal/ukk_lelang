@@ -19,77 +19,167 @@
     <!-- <link rel="stylesheet" href="layouts/style.css"> -->
     <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
 
+
+    <style>
+        body {
+            margin-top: 150px;
+            background-color: slategrey;
+
+        }
+
+        .container {
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 15px;
+            padding-left: 15px;
+            width: 100%;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+
+
+        .card-columns .card {
+            margin-bottom: 0.75rem;
+        }
+
+        @media (min-width: 576px) {
+            .card-columns {
+                column-count: 3;
+                column-gap: 1.25rem;
+            }
+
+            .card-columns .card {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+
+        .text-muted {
+            color: #9faecb !important;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem !important;
+        }
+
+        .input-group {
+            position: relative;
+            display: flex;
+            width: 100%;
+        }
+    </style>
+
+
+
+
+
 </head>
 
-<body class="hold-transition login-page">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="#"><b>Pelelangan Daring</b></a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="card">
-            <div class="card-body login-card-body">
-                <p class="login-box-msg">Laman Masuk Masyarakat</p>
-                <hr>
-                <?php
-        if (isset($_GET['info'])) {
-          if ($_GET['info'] == "gagal") { ?>
-                <div class="alert alert-warning alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h5><i class="icon fas fa-exclamation-triangle"></i> Mohon Maaf</h5>
-                    Login gagal! Username dan Password salah!
-                </div>
-                <?php } else if ($_GET['info'] == "logout") { ?>
-                <div class="alert alert-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h5><i class="icon fas fa-check"></i> Terima Kasih</h5>
-                    Anda telah berhasil logout
-                </div>
-                <?php } else if ($_GET['info'] == "login") { ?>
-                <div class="alert alert-info alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h5><i class="icon fas fa-info"></i> Mohon Maaf</h5>
-                    Anda harus login terlebih dahulu
-                </div>
-                <?php }
-        } ?>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card-group mb-0">
+                    <div class="card p-4">
+                        <div class="card-body">
+                            <h1>Login</h1>
+                            <?php
+                            if (isset($_GET['info'])) {
+                                if ($_GET['info'] == "gagal") { ?>
+                            <div class="alert alert-warning alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert"
+                                    aria-hidden="true">&times;</button>
+                                <h5><i class="icon fas fa-exclamation-triangle"></i> Mohon Maaf</h5>
+                                Login gagal! Username dan Password salah!
+                            </div>
+                            <?php } else if ($_GET['info'] == "logout") { ?>
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert"
+                                    aria-hidden="true">&times;</button>
+                                <h5><i class="icon fas fa-check"></i> Terima Kasih</h5>
+                                Anda telah berhasil logout
+                            </div>
+                            <?php } else if ($_GET['info'] == "login") { ?>
+                            <div class="alert alert-info alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert"
+                                    aria-hidden="true">&times;</button>
+                                <h5><i class="icon fas fa-info"></i> Mohon Maaf</h5>
+                                Anda harus login terlebih dahulu
+                            </div>
+                            <?php }
+                            } ?>
+                            <p class="text-muted">Sign In to your account</p>
+                            <form  action="proseslog/cek_login_masyarakat.php" method="POST">
 
-                <form action="proseslog/cek_login_masyarakat.php" method="post">
-                    <div class="input-group mb-3">
-                        <input type="username" name="username" class="form-control" placeholder="Username" required>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-addon"></span>
+                                    <input type="text" class="form-control" placeholder="Username" name="username" required>
+                                </div>
+                                <div class="input-group mb-4">
+                                    <span class="input-group-addon"></span>
+                                    <input type="password" class="form-control" placeholder="Password" name="password" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="submit" class="btn btn-primary px-4">Login</button>
+                                    </div>
+
+
+                            </form>
+                                <div class="col-6 text-right">
+                                    <a class="btn btn-link px-0" href="login.php">Login admin!</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password" required>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
+                    <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                        <div class="card-body text-center">
+                            <div>
+                                <h2>Daftar Akun</h2>
+                                <p>Ikuti lelang murah dengan klik tombol dibawah ini</p>
+                                <div class="mt-3">
+                                    <img src="assets/logorm.png" alt="Logo"  style="max-width: 100%; max-height: 100px; height: auto;">
+                                </div>
+                                <a  class="btn btn-primary active mt-3" href="daftar_masyarakat.php">Ikut Lelang!</a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="social-auth-links text-center">
-                        <button type="submit" class="btn btn-primary btn-block btn-block">Login Masyarakat</button>
-                        <a href="daftar_masyarakat.php" class="btn btn-info btn-block btn-block">Daftar Baru
-                            Masyarakat</a>
-                    </div>
-                </form>
-                <p class="mb-0 text-center">
-                    <!-- <button>
-            <div class="arrow-wrapper">
-              <div class="arrow">Sign Up</div>
+                </div>
             </div>
-          </button> -->
-                    <a href="login.php" class="text-center">Login Admin / Petugas</a>
-                </p>
-            </div>
-            <!-- /.login-card-body -->
         </div>
     </div>
-    <!-- /.login-box -->
 
+
+
+    
     <!-- jQuery -->
     <script src="assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
